@@ -34,21 +34,11 @@ typedef struct datapacket
 } DATAPACKET, *PDATAPACKET;
 
 const char block_data[] =				
-"HTTP/1.1 200 OK\r\n"					
+"HTTP/1.1 302 Redirect\r\n"					
 "Connection: close\r\n"					
-"Content-Type: text/html\r\n"			
-"\r\n"
-"<!doctype html>\n"						
-"<html>\n"								
-"\t<head>\n"							
-"\t\t<title>BLOCKED!</title>\n"			
-"\t</head>\n"							
-"\t<body>\n"							
-"\t\t<h1>BLOCKED!</h1>\n"				
-"\t\t<hr>\n"							
-"\t\t<p>This URL has been blocked!</p>\n"		
-"\t</body>\n"									
-"</html>\n";									
+"Content-Type: text/html\r\n"
+"Location: http://warning.or.kr"
+;									
 
 bool mal_site_state;												
 char blockedDomain[MAXURL];											
